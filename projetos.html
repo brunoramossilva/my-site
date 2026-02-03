@@ -16,21 +16,8 @@
 </head>
 
 <body class="page-projects">
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a class="brand" href="index.html">
-                <span class="brand-dot"></span>
-                Bruno Ramos
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Sobre mim</a></li>
-                <li><a class="active" href="projetos.html">Projetos</a></li>
-                <li><a href="pages/contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
 
     <main class="container">
         <!-- Hero -->
@@ -72,18 +59,16 @@
                 <article class="card">
                     <h3>Lojinha Social</h3>
                     <p>
-                        Plataforma web full stack criada para digitalizar processos de ONGs, desenvolvida em parceria
-                        com a Prefeitura do Recife. O sistema é utilizado por mais de 100 ONGs e foi premiado no
-                        programa CInBora Impactar.
+                        Plataforma web full stack desenvolvida para digitalizar processos de ONGs, em parceria com a Prefeitura do Recife e UFPE, com foco em impacto social e escalabilidade. Atuei como Product Owner e desenvolvedor, definindo requisitos, priorizando backlog e organizando entregas com Scrum e Kanban, mantendo taxa de entrega acima de 90% por sprint.
+                        
+                        O sistema utiliza Node.js, React, Docker e Prisma, com APIs REST, banco de dados PostgreSQL, integração com API externa e testes unitários com Jest para garantir estabilidade. A plataforma é utilizada por mais de 100 ONGs, reduzindo até 60% das tarefas manuais operacionais e foi premiada como Melhor Solução e Melhor Pitch no programa CInBora Impactar.
                     </p>
-
                     <div class="skills" style="margin-top: 12px">
                         <span class="pill">React</span>
                         <span class="pill">Node.js</span>
                         <span class="pill">PostgreSQL</span>
                         <span class="pill">Docker</span>
                     </div>
-
                     <div class="card-actions">
                         <a class="btn ghost" href="https://github.com/labprogsam/social-store-front" target="_blank">
                             Repositório Frontend
@@ -98,16 +83,15 @@
                 <article class="card">
                     <h3>CINOVA</h3>
                     <p>
-                        Aplicativo mobile para gestão de condomínios. Atuei como Tech Lead e Scrum Master,
-                        liderando uma equipe de 6 desenvolvedores desde a concepção até a entrega da solução.
+                        Aplicativo mobile para gestão de condomínios, focado em comunicação interna e organização de demandas dos moradores. Iniciei o projeto com protótipo funcional em C++ para validar regras de negócio, reduzindo ~35% do retrabalho na implementação final em React Native.
+                        
+                        Atuei como Tech Lead e Scrum Master, definindo stack, arquitetura e liderando um time de 6 desenvolvedores, promovendo boas práticas, testes unitários e entregas semanais com Scrum e Kanban. O projeto foi selecionado para testes com 50 moradores, com build funcional em APK e ambiente padronizado via Docker, reduzindo ~40% do tempo de setup. O backend está em evolução com estudos em C# e .NET.
                     </p>
-
                     <div class="skills" style="margin-top: 12px">
                         <span class="pill">React Native</span>
                         <span class="pill">API REST</span>
                         <span class="pill">PostgreSQL</span>
                     </div>
-
                     <div class="card-actions">
                         <a class="btn ghost" href="https://github.com/brunoramossilva/sgmp-mobile" target="_blank">
                             Repositório Mobile
@@ -303,6 +287,7 @@
                     <div class="skills" style="margin-top: 12px">
                         <span class="pill">HTML</span>
                         <span class="pill">CSS</span>
+                        <span class="pill">JavaScript</span>
                     </div>
 
                     <div class="card-actions">
@@ -315,19 +300,11 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-copy">© 2026 Bruno Ramos. Todos os direitos reservados.</p>
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
 
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/bruno-ramos-developer" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/brunoramossilva" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Component Loader -->
+    <script src="components/loader.js"></script>
 </body>
 
 </html>
