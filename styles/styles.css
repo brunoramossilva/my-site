@@ -1,0 +1,494 @@
+:root {
+    --bg: #0b1220;
+    --card: rgba(255, 255, 255, 0.06);
+    --text: #e7eaf0;
+    --muted: rgba(231, 234, 240, 0.72);
+    --border: rgba(255, 255, 255, 0.12);
+    --primary: #7c5cff;
+    --primary-2: #22c55e;
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(1000px 600px at 20% 40%, rgba(124, 92, 255, 0.12), transparent 60%),
+        radial-gradient(800px 500px at 90% 60%, rgba(34, 197, 94, 0.08), transparent 55%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Layout */
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(11, 18, 32, 0.75);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.brand-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    box-shadow: 0 0 18px rgba(124, 92, 255, 0.5);
+    flex-shrink: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 12px;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+}
+
+.nav-links a.active {
+    color: var(--text);
+    background: rgba(124, 92, 255, 0.18);
+    border: 1px solid rgba(124, 92, 255, 0.25);
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 28px;
+    padding: 56px 0 24px;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.hero-highlight {
+    display: block;
+    color: rgba(231, 234, 240, 0.9);
+    font-weight: 600;
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 60ch;
+    margin-bottom: 18px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--primary), #5b7cff);
+    color: white;
+    box-shadow: 0 12px 30px rgba(124, 92, 255, 0.28);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06)), linear-gradient(135deg, var(--primary), #5b7cff);
+}
+
+.btn.ghost {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn.ghost:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
+}
+
+/* Estilos para botão de download (secundário mais destacado) */
+.btn.secondary {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 10px 14px;
+    gap: 10px;
+    backdrop-filter: blur(6px);
+}
+
+.btn.secondary svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    color: white;
+    opacity: 0.95;
+}
+
+.btn.secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
+}
+
+.btn.secondary:active {
+    transform: translateY(0);
+}
+
+.btn.secondary span {
+    font-weight: 700;
+}
+
+.hero-social {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    border-radius: 14px;
+    transition: 0.2s ease;
+}
+
+.hero-social a:hover {
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
+}
+
+.hero-social img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Avatar */
+.avatar-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.avatar {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Sections */
+.section {
+    padding: 34px 0;
+}
+
+.section-header {
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.section-header p {
+    color: var(--muted);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.card {
+    cursor: default;
+    user-select: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.card p {
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+.card p:last-child {
+    margin-top: 16px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill {
+    cursor: default;
+    user-select: none;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--border);
+    margin-top: 34px;
+    padding: 22px 0;
+    background: rgba(11, 18, 32, 0.7);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.footer-copy {
+    color: rgba(231, 234, 240, 0.65);
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+    }
+}
+
+/* Motion & Animations (ajustado para suavidade) */
+:root {
+    --motion-duration: 900ms;
+    --motion-duration-fast: 520ms;
+    --motion-easing: cubic-bezier(.2, .85, .25, 1);
+}
+
+/* Smooth transitions for interactive elements */
+a,
+button,
+.btn,
+.nav-links a,
+.hero-social a,
+.card,
+.avatar-card,
+.pill,
+.footer-links a,
+.brand {
+    transition: background-color var(--motion-duration) var(--motion-easing),
+        color var(--motion-duration) var(--motion-easing),
+        transform var(--motion-duration-fast) var(--motion-easing),
+        box-shadow var(--motion-duration) var(--motion-easing),
+        opacity var(--motion-duration) var(--motion-easing);
+    will-change: transform, opacity;
+}
+
+/* Subtle lifts on hover/focus */
+.nav-links a:hover,
+.hero-social a:hover,
+.footer-links a:hover {
+    transform: translateY(-2px);
+}
+
+.card:hover,
+.avatar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.pill:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active,
+.nav-links a:active {
+    transform: translateY(0);
+}
+
+/* Entrance animations for sections */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section,
+.hero,
+.card {
+    animation: fadeUp 1000ms var(--motion-easing) both;
+}
+
+/* Staggered reveal for section headers */
+.section-header {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: fadeUp 1000ms var(--motion-easing) both;
+    animation-delay: 120ms;
+}
+
+/* Small floating effect for brand-dot */
+.brand-dot {
+    transition: box-shadow var(--motion-duration) var(--motion-easing), transform var(--motion-duration-fast) var(--motion-easing);
+}
+
+.brand-dot:hover {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(124, 92, 255, 0.36);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    a,
+    button,
+    .btn,
+    .nav-links a,
+    .hero-social a,
+    .card,
+    .avatar-card,
+    .pill,
+    .footer-links a,
+    .brand {
+        transition: none !important;
+        animation: none !important;
+    }
+}
