@@ -1,93 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projetos - Bruno Ramos</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <ul class="nav-bar">
-            <li>
-                <a href="index.html">Sobre mim</a>
-            </li>
-            <li>
-                <a href="projetos.html">Projetos</a>
-            </li>
-            <li>
-                <a href="contato.html">Contato</a>
-            </li>
-        </ul>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a class="brand" href="index.html">
+                    <span class="brand-dot"></span>
+                    Bruno Ramos
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Sobre mim</a></li>
+                    <li><a class="active" href="projetos.html">Projetos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="profile-photo-container">
-        <img src="./assets/profile_photo.svg" alt="profile photo" class="profile-photo">
-    </div>
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div>
+                <span class="hero-badge">Portfólio</span>
 
-    <main class="projects-main">
-        <h1>Bruno Ramos</h1>
-        <h2>Desenvolvedor de Software</h2>
+                <h1>
+                    Meus projetos
+                    <span class="hero-highlight">Coisas que eu já construí e publiquei</span>
+                </h1>
 
-        <h3>Meus Projetos</h3>
+                <p class="hero-description">
+                    Aqui estão alguns projetos que desenvolvi. A maioria está no GitHub com código e detalhes.
+                </p>
 
-        <div class="project-card">
-            <h4>Microprocessador MIPS</h4>
-            <p>Projeto desenvolvido na disciplina de Sistemas Digitais do curso de Sistemas de Informação da UFPE - CIn.
-                O objetivo foi simular um processador MIPS com arquitetura monociclo, utilizando Verilog para
-                representar seus principais componentes. Ao final, a aplicação foi capaz de executar um código case em
-                Assembly.</p>
-            <div class="tech-tags">
-                <span>SystemVerilog</span>
-                <span>Verilog</span>
-                <span>Assembly</span>
+                <div class="hero-actions">
+                    <a class="btn primary" href="contato.html">Falar comigo</a>
+                    <a class="btn ghost" href="https://github.com/brunoramossilva" target="_blank">
+                        Ver GitHub
+                    </a>
+                </div>
+
+                <div class="skills">
+                    <span class="pill">Backend</span>
+                    <span class="pill">APIs</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">Cloud</span>
+                </div>
             </div>
-            <a href="https://github.com/lucas-amaral-06/MIPS-Mono-Cycle" target="_blank" class="project-link">Ver no
-                GitHub →</a>
-        </div>
 
-        <div class="project-card">
-            <h4>Don't Touch Me</h4>
-            <p>Trata-se de um jogo no estilo one hit kill, cujo objetivo é coletar o maior número possível de moedas sem
-                ser atingido pelos obstáculos. A diversão está na dificuldade de desviar dos obstáculos enquanto se
-                tenta coletar as moedas espalhadas pela tela.</p>
-            <div class="tech-tags">
-                <span>Python</span>
-                <span>Pygame</span>
-                <span>OOP</span>
+            <aside class="avatar-card">
+                <img class="avatar" src="./assets/profile_photo.svg" alt="Foto de perfil" />
+            </aside>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Projetos em destaque</h2>
+                <p>Uma seleção dos meus trabalhos recentes.</p>
             </div>
-            <a href="https://github.com/obrunohenrique/don-t-touch-me" class="project-link">Ver no GitHub →</a>
-        </div>
+
+            <div class="grid-2">
+                <article class="card">
+                    <h3>Microprocessador MIPS</h3>
+                    <p>
+                        Projeto desenvolvido na disciplina de Sistemas Digitais (UFPE - CIn). O objetivo foi
+                        simular um processador MIPS monociclo usando Verilog/SystemVerilog, capaz de executar um
+                        código em Assembly.
+                    </p>
+
+                    <div class="skills" style="margin-top: 12px">
+                        <span class="pill">SystemVerilog</span>
+                        <span class="pill">Verilog</span>
+                        <span class="pill">Assembly</span>
+                    </div>
+
+                    <div style="margin-top: 14px">
+                        <a class="btn ghost" href="https://github.com/lucas-amaral-06/MIPS-Mono-Cycle" target="_blank">
+                            Ver no GitHub →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Don't Touch Me</h3>
+                    <p>
+                        Jogo estilo one hit kill: o objetivo é coletar o máximo de moedas possível sem ser
+                        atingido pelos obstáculos. A graça está na dificuldade e no ritmo rápido.
+                    </p>
+
+                    <div class="skills" style="margin-top: 12px">
+                        <span class="pill">Python</span>
+                        <span class="pill">Pygame</span>
+                        <span class="pill">OOP</span>
+                    </div>
+
+                    <div style="margin-top: 14px">
+                        <a class="btn ghost" href="https://github.com/obrunohenrique/don-t-touch-me" target="_blank">
+                            Ver no GitHub →
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-links">
-            <div>
-                <a href="https://www.linkedin.com/in/bruno-ramos-developer/" target="_blank">
-                    LinkedIn
-                    <img src="./assets/linkedin_icon.svg" alt="linkedin icon">
-                </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copy">© 2026 Bruno Ramos. Todos os direitos reservados.</p>
+
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/bruno-ramos-backend/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/brunoramossilva" target="_blank">GitHub</a>
+                </div>
             </div>
-            <div>
-                <a href="https://github.com/brunoramossilva" target="_blank">
-                    Github
-                    <img src="./assets/github_icon.svg" alt="github icon">
-                </a>
-            </div>
-            <div>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2026 Bruno Ramos. Todos os direitos reservados.
         </div>
     </footer>
 </body>

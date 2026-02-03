@@ -2,68 +2,136 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna o site responsivo -->
-    <title>Bruno Ramos</title> <!-- Título da página -->
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo de estilos CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Otimiza o carregamento da fonte -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Necessário para fontes externas -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> <!-- Fonte Poppins -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bruno Ramos | Desenvolvedor de Software</title>
+
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <ul class="nav-bar"> <!-- Barra de navegação -->
-            <li>
-                <a href="index.html">Sobre mim</a> <!-- Link para a página "Sobre mim" -->
-            </li>
-            <li>
-                <a href="projetos.html">Projetos</a> <!-- Link para a página "Projetos" -->
-            </li>
-            <li>
-                <a href="contato.html">Contato</a> <!-- Link para a página "Contato" -->
-            </li>
-        </ul>
+    <header class="header">
+        <nav class="nav container">
+            <a class="brand" href="index.html">
+                <span class="brand-dot"></span>
+                Bruno Ramos
+            </a>
+
+            <ul class="nav-links">
+                <li><a class="active" href="index.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="profile-photo-container">
-        <img src="./assets/profile_photo.svg" alt="profile photo" class="profile-photo"> <!-- Foto de perfil -->
-    </div>
-
     <main>
-        <h1>Bruno Ramos</h1> <!-- Título de maior hierarquia -->
-        <h2>Desenvolvedor de Software</h2>
-        <h3>Sobre mim</h3>
-        <p>Sou apaixonado por tecnologia e pela resolução de problemas, com foco no desenvolvimento back-end. Estou
-            sempre aprimorando minhas habilidades e aprendendo novas tecnologias para criar soluções eficientes,
-            encarando desafios com dedicação e criatividade.</p>
-        <h3>Formação</h3>
-        <p>Sistemas de Informação no Centro de Informática da UFPE.</p>
+        <section class="hero container">
+            <div class="hero-left">
+                <p class="hero-badge">Back-end • APIs • Integrações</p>
+
+                <h1>
+                    Desenvolvedor de Software
+                    <span class="hero-highlight">com foco em back-end</span>
+                </h1>
+
+                <p class="hero-description">
+                    Sou apaixonado por tecnologia e resolução de problemas. Gosto de criar soluções eficientes,
+                    bem estruturadas e escaláveis, sempre buscando evoluir com boas práticas e novas tecnologias.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn primary" href="projetos.html">Ver projetos</a>
+                    <a class="btn ghost" href="contato.html">Falar comigo</a>
+                </div>
+
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/bruno-ramos-developer/" target="_blank" rel="noreferrer">
+                        <img src="./assets/linkedin_icon.svg" alt="LinkedIn" />
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://github.com/brunoramossilva" target="_blank" rel="noreferrer">
+                        <img src="./assets/github_icon.svg" alt="GitHub" />
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="avatar-card">
+                    <img src="./assets/profile_photo.svg" alt="Foto de perfil" class="avatar" />
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-header">
+                <h2>Sobre mim</h2>
+                <p>
+                    Um resumo rápido do meu perfil e do que eu busco construir como desenvolvedor.
+                </p>
+            </div>
+
+            <div class="grid-2">
+                <article class="card">
+                    <h3>Perfil</h3>
+                    <p>
+                        Tenho foco em desenvolvimento back-end, com interesse em arquitetura, performance,
+                        integração entre serviços e APIs bem desenhadas.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Formação</h3>
+                    <p>
+                        Sistemas de Informação — Centro de Informática (UFPE).
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-header">
+                <h2>Principais habilidades</h2>
+                <p>Algumas áreas que eu curto trabalhar e evoluir constantemente.</p>
+            </div>
+
+            <div class="skills">
+                <span class="pill">Back-end</span>
+                <span class="pill">APIs REST</span>
+                <span class="pill">Integrações</span>
+                <span class="pill">SQL</span>
+                <span class="pill">Docker</span>
+                <span class="pill">Cloud</span>
+                <span class="pill">Boas práticas</span>
+                <span class="pill">Clean Code</span>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-links">
-            <div>
-                <a href="https://www.linkedin.com/in/bruno-ramos-developer/" target="_blank">
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-copy">
+                © 2026 Bruno Ramos. Todos os direitos reservados.
+            </p>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/bruno-ramos-developer/" target="_blank" rel="noreferrer">
                     LinkedIn
-                    <img src="./assets/linkedin_icon.svg" alt="linkedin icon">
+                </a>
+                <a href="https://github.com/brunoramossilva" target="_blank" rel="noreferrer">
+                    GitHub
                 </a>
             </div>
-            <div>
-                <a href="https://github.com/brunoramossilva" target="_blank">
-                    Github
-                    <img src="./assets/github_icon.svg" alt="github icon">
-                </a>
-            </div>
-            <div>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2026 Bruno Ramos. Todos os direitos reservados.
         </div>
     </footer>
 </body>
