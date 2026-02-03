@@ -492,3 +492,46 @@ button,
         animation: none !important;
     }
 }
+
+@media (max-width: 640px) {
+    /* Header */
+    .nav {
+        flex-direction: column;
+        gap: 14px;
+        padding: 12px 0;
+    }
+
+    .brand {
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-links li {
+        flex: 1;
+    }
+
+    .nav-links a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
