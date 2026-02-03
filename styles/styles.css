@@ -7,6 +7,11 @@
     --primary: #7c5cff;
     --primary-2: #22c55e;
     --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+
+    /* Motion & Animations (ajustado para suavidade) */
+    --motion-duration: 900ms;
+    --motion-duration-fast: 520ms;
+    --motion-easing: cubic-bezier(.2, .85, .25, 1);
 }
 
 * {
@@ -21,6 +26,7 @@ body {
 }
 
 body {
+    padding-top: 72px;
     font-family: "Poppins", sans-serif;
     background: radial-gradient(1000px 600px at 20% 40%, rgba(124, 92, 255, 0.12), transparent 60%),
         radial-gradient(800px 500px at 90% 60%, rgba(34, 197, 94, 0.08), transparent 55%),
@@ -42,12 +48,16 @@ main {
 
 /* Header */
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 50;
+    left: 0;
+    width: 100%;
+
+    z-index: 100;
     backdrop-filter: blur(14px);
     background: rgba(11, 18, 32, 0.75);
     border-bottom: 1px solid var(--border);
+    background: rgba(11, 18, 32, 0.65);
 }
 
 .nav {
@@ -109,6 +119,10 @@ main {
     gap: 28px;
     padding: 56px 0 24px;
     align-items: center;
+}
+
+.hero+.section {
+    padding-top: 8px;
 }
 
 .hero-badge {
@@ -296,6 +310,20 @@ main {
     padding: 18px;
 }
 
+.card-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+    align-items: stretch;
+}
+
+.card-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
 .card h3 {
     margin-bottom: 8px;
     font-size: 1.05rem;
@@ -388,13 +416,6 @@ main {
     .nav-links a {
         padding: 8px 10px;
     }
-}
-
-/* Motion & Animations (ajustado para suavidade) */
-:root {
-    --motion-duration: 900ms;
-    --motion-duration-fast: 520ms;
-    --motion-easing: cubic-bezier(.2, .85, .25, 1);
 }
 
 /* Smooth transitions for interactive elements */
@@ -494,32 +515,60 @@ button,
 }
 
 @media (max-width: 640px) {
+
     /* Header */
     .nav {
         flex-direction: column;
-        gap: 14px;
-        padding: 12px 0;
+        align-items: center;
+        gap: 20px;
+        padding: 16px 0;
     }
 
     .brand {
         justify-content: center;
+        text-align: center;
         font-size: 1.1rem;
     }
 
     .nav-links {
+        display: flex;
         justify-content: center;
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    .nav-links li {
-        flex: 1;
+        gap: 10px;
+        flex-wrap: nowrap;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 
     .nav-links a {
-        display: block;
-        text-align: center;
-        padding: 10px 0;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border);
+        font-weight: 600;
+        color: var(--text);
+        opacity: 0.85;
+        white-space: nowrap;
+    }
+
+    .nav-links a.active {
+        background: linear-gradient(135deg, var(--primary), #5b7cff);
+        color: white;
+        border: none;
+        box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+        opacity: 1;
+    }
+
+    .nav-links a:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .header {
+        padding-bottom: 4px;
+    }
+
+    body {
+        padding-top: 120px;
     }
 
     /* Footer */
@@ -533,5 +582,81 @@ button,
     .footer-links {
         justify-content: center;
     }
-}
 
+    .hero-social {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 360px;
+        margin: 12px auto 0;
+    }
+
+    /* Email ocupa a linha inteira */
+    .hero-social a:first-child {
+        grid-column: 1 / -1;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* GitHub + LinkedIn */
+    .hero-social a {
+        justify-content: center;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 360px;
+        margin: 16px auto 0;
+    }
+
+    /* Baixar currículo embaixo, ocupando tudo */
+    .hero-actions .btn.secondary {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    /* Hero da página Projetos */
+    .page-projects .hero-actions {
+        justify-content: center;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Hero da página Contato */
+    .page-contact .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 360px;
+        margin: 16px auto 0;
+    }
+
+    .hero-actions a {
+        justify-content: center;
+    }
+
+    .card-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-actions .btn {
+        justify-content: center;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    /* Se tiver 1 botão */
+    .card-actions .btn:only-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Se tiver 3 botões → o último ocupa a linha inteira */
+    .card-actions .btn:nth-child(3):last-child {
+        grid-column: 1 / -1;
+    }
+}
