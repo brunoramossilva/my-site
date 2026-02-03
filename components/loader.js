@@ -1,3 +1,4 @@
+// Este script carrega dinamicamente o cabeçalho e o rodapé nas páginas HTML.
 (() => {
   function getCurrentPage() {
     const path = window.location.pathname;
