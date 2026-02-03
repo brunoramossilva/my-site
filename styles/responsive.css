@@ -1,0 +1,166 @@
+/* Responsive */
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    /* Header */
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 16px 0;
+    }
+
+    .brand {
+        justify-content: center;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .nav-links a {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border);
+        font-weight: 600;
+        color: var(--text);
+        opacity: 0.85;
+        white-space: nowrap;
+    }
+
+    .nav-links a.active {
+        background: linear-gradient(135deg, var(--primary), #5b7cff);
+        color: white;
+        border: none;
+        box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+        opacity: 1;
+    }
+
+    .nav-links a:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .header {
+        padding-bottom: 4px;
+    }
+
+    body {
+        padding-top: 120px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .hero-social {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 360px;
+        margin: 12px auto 0;
+    }
+
+    /* Email ocupa a linha inteira */
+    .hero-social a:first-child {
+        grid-column: 1 / -1;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* GitHub + LinkedIn */
+    .hero-social a {
+        justify-content: center;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 360px;
+        margin: 16px auto 0;
+    }
+
+    /* Baixar currículo embaixo, ocupando tudo */
+    .hero-actions .btn.secondary {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    /* Hero da página Projetos */
+    .page-projects .hero-actions {
+        justify-content: center;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Hero da página Contato */
+    .page-contact .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 360px;
+        margin: 16px auto 0;
+    }
+
+    .hero-actions a {
+        justify-content: center;
+    }
+
+    .card-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-actions .btn {
+        justify-content: center;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    /* Se tiver 1 botão */
+    .card-actions .btn:only-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Se tiver 3 botões → o último ocupa a linha inteira */
+    .card-actions .btn:nth-child(3):last-child {
+        grid-column: 1 / -1;
+    }
+}

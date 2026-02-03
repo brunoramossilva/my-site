@@ -1,0 +1,15 @@
+:root {
+    --bg: #0b1220;
+    --card: rgba(255, 255, 255, 0.06);
+    --text: #e7eaf0;
+    --muted: rgba(231, 234, 240, 0.72);
+    --border: rgba(255, 255, 255, 0.12);
+    --primary: #7c5cff;
+    --primary-2: #22c55e;
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+
+    /* Motion & Animations (ajustado para suavidade) */
+    --motion-duration: 900ms;
+    --motion-duration-fast: 520ms;
+    --motion-easing: cubic-bezier(.2, .85, .25, 1);
+}
