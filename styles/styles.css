@@ -166,8 +166,9 @@ main {
 }
 
 .btn.primary:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.03);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06)), linear-gradient(135deg, var(--primary), #5b7cff);
 }
 
 .btn.ghost {
@@ -177,15 +178,16 @@ main {
 }
 
 .btn.ghost:hover {
-    transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.09);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
 }
 
 /* Estilos para botão de download (secundário mais destacado) */
 .btn.secondary {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     color: white;
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 10px 14px;
     gap: 10px;
     backdrop-filter: blur(6px);
@@ -202,15 +204,17 @@ main {
 
 .btn.secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(34,197,94,0.12), 0 8px 18px rgba(124,92,255,0.06);
-    background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(124,92,255,0.06));
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
 }
 
 .btn.secondary:active {
     transform: translateY(0);
 }
 
-.btn.secondary span { font-weight: 700; }
+.btn.secondary span {
+    font-weight: 700;
+}
 
 .hero-social {
     display: flex;
@@ -233,7 +237,9 @@ main {
 
 .hero-social a:hover {
     color: var(--text);
-    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
 }
 
 .hero-social img {
@@ -282,6 +288,8 @@ main {
 }
 
 .card {
+    cursor: default;
+    user-select: none;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
     border-radius: 18px;
@@ -295,6 +303,11 @@ main {
 
 .card p {
     color: var(--muted);
+    margin-top: 10px;
+}
+
+.card p:last-child {
+    margin-top: 16px;
 }
 
 /* Skills */
@@ -305,6 +318,8 @@ main {
 }
 
 .pill {
+    cursor: default;
+    user-select: none;
     padding: 10px 12px;
     border-radius: 999px;
     border: 1px solid var(--border);
@@ -343,10 +358,16 @@ main {
     text-decoration: none;
     color: var(--muted);
     font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: 0.2s ease;
 }
 
 .footer-links a:hover {
     color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12), 0 8px 18px rgba(124, 92, 255, 0.06);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(124, 92, 255, 0.06));
 }
 
 /* Responsive */
@@ -373,11 +394,20 @@ main {
 :root {
     --motion-duration: 900ms;
     --motion-duration-fast: 520ms;
-    --motion-easing: cubic-bezier(.2,.85,.25,1);
+    --motion-easing: cubic-bezier(.2, .85, .25, 1);
 }
 
 /* Smooth transitions for interactive elements */
-a, button, .btn, .nav-links a, .hero-social a, .card, .avatar-card, .pill, .footer-links a, .brand {
+a,
+button,
+.btn,
+.nav-links a,
+.hero-social a,
+.card,
+.avatar-card,
+.pill,
+.footer-links a,
+.brand {
     transition: background-color var(--motion-duration) var(--motion-easing),
         color var(--motion-duration) var(--motion-easing),
         transform var(--motion-duration-fast) var(--motion-easing),
@@ -387,30 +417,43 @@ a, button, .btn, .nav-links a, .hero-social a, .card, .avatar-card, .pill, .foot
 }
 
 /* Subtle lifts on hover/focus */
-.nav-links a:hover, .hero-social a:hover, .footer-links a:hover {
-    transform: translateY(-2px) scale(1.01);
+.nav-links a:hover,
+.hero-social a:hover,
+.footer-links a:hover {
+    transform: translateY(-2px);
 }
 
-.card:hover, .avatar-card:hover {
+.card:hover,
+.avatar-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 .pill:hover {
     transform: translateY(-2px);
 }
 
-.btn:active, .nav-links a:active {
+.btn:active,
+.nav-links a:active {
     transform: translateY(0);
 }
 
 /* Entrance animations for sections */
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.section, .hero, .card {
+.section,
+.hero,
+.card {
     animation: fadeUp 1000ms var(--motion-easing) both;
 }
 
@@ -426,14 +469,25 @@ a, button, .btn, .nav-links a, .hero-social a, .card, .avatar-card, .pill, .foot
 .brand-dot {
     transition: box-shadow var(--motion-duration) var(--motion-easing), transform var(--motion-duration-fast) var(--motion-easing);
 }
+
 .brand-dot:hover {
     transform: translateY(-1px) scale(1.03);
-    box-shadow: 0 6px 20px rgba(124,92,255,0.36);
+    box-shadow: 0 6px 20px rgba(124, 92, 255, 0.36);
 }
 
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    a, button, .btn, .nav-links a, .hero-social a, .card, .avatar-card, .pill, .footer-links a, .brand {
+
+    a,
+    button,
+    .btn,
+    .nav-links a,
+    .hero-social a,
+    .card,
+    .avatar-card,
+    .pill,
+    .footer-links a,
+    .brand {
         transition: none !important;
         animation: none !important;
     }
