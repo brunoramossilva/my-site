@@ -6,7 +6,8 @@
     if (path.includes("contato.html")) return "contato";
     return "index";
   }
-
+  
+  // Determina o caminho base para os componentes, dependendo se estamos em uma página dentro de "pages/" ou na raiz.
   function getBaseUrl() {
     return window.location.pathname.includes("/pages/") ? "../" : "";
   }
