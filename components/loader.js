@@ -12,6 +12,7 @@
     return window.location.pathname.includes("/pages/") ? "../" : "";
   }
 
+  // Carrega o componente HTML e o insere no elemento alvo, substituindo {{baseUrl}} pelo caminho correto.
   async function loadComponent(name, id) {
     const baseUrl = getBaseUrl();
     const res = await fetch(`${baseUrl}components/${name}.html`);
