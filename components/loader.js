@@ -7,12 +7,12 @@
     return "index";
   }
   
-  // Determina o caminho base para os componentes, dependendo se estamos em uma página dentro de "pages/" ou na raiz.
+  // Determina o caminho base para os componentes, dependendo se estamos em uma página dentro de "pages/" ou na raiz
   function getBaseUrl() {
     return window.location.pathname.includes("/pages/") ? "../" : "";
   }
 
-  // Carrega o componente HTML e o insere no elemento alvo, substituindo {{baseUrl}} pelo caminho correto.
+  // Carrega o componente HTML e o insere no elemento alvo, substituindo {{baseUrl}} pelo caminho correto
   async function loadComponent(name, id) {
     const baseUrl = getBaseUrl();
     const res = await fetch(`${baseUrl}components/${name}.html`);
@@ -22,6 +22,7 @@
     if (name === "header") markActivePage();
   }
 
+  // Marca o link do menu correspondente à página atual como ativo
   function markActivePage() {
     const current = getCurrentPage();
     document.querySelectorAll(".nav-links a").forEach((link) => {
