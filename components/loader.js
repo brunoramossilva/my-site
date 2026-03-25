@@ -33,6 +33,7 @@
     });
   }
 
+  // Verifica se o DOM já está carregado, caso contrário, aguarda o evento DOMContentLoaded para carregar os componentes
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
       loadComponent("header", "header-placeholder");
