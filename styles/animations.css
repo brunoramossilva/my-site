@@ -71,6 +71,7 @@ button,
     transition: box-shadow var(--motion-duration) var(--motion-easing), transform var(--motion-duration-fast) var(--motion-easing);
 }
 
+/* Subtle lift and glow on hover for brand-dot */
 .brand-dot:hover {
     transform: translateY(-1px) scale(1.03);
     box-shadow: 0 6px 20px rgba(124, 92, 255, 0.36);
